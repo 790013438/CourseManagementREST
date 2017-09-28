@@ -13,7 +13,7 @@ import snippets.jee.rest.ws.dto.Teacher;
 public class CourseService {
 
     @GET
-    @Produces (MediaType.APPLICATION_XML)
+    @Produces (MediaType.APPLICATION_JSON)
     @Path("get/{courseId}")
     public Course getCourse (@PathParam("courseId") int id) {
 
