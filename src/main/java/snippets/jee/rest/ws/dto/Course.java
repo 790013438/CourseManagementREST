@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Course {
 
-    @XmlAttribute
     private int id;
 
     @XmlElement(name="course_name")
