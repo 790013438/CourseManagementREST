@@ -1,0 +1,9 @@
+{
+    "id":10,
+    "name":"Course-10",
+    "credits":5,
+    "teacher": {
+        "id":2,
+        "name":"Teacher1"
+    }
+}
