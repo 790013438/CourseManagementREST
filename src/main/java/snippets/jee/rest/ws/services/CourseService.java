@@ -33,4 +33,13 @@ public class CourseService {
         
         return new Course(id, "Course-" + id, 5, new Teacher(2, "Teacher1"));
     }
+
+    @POST
+    @Consumes (MediaType.APPLICATION_JSON)
+    @Produces (MediaType.APPLICATION_JSON)
+    @Path("add")
+    public Course addCourse (Course course) {
+        
+        int courseId = dummyAddCourse(course.getName(), course.getCredits());
+    }
 }
