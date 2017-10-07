@@ -1,6 +1,8 @@
 package snippets.jee.rest.ws.services;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -32,5 +34,31 @@ public class CourseService {
         //data from database using, for example, JDO or JDBC
         
         return new Course(id, "Course-" + id, 5, new Teacher(2, "Teacher1"));
+    }
+
+    @POST
+    @Consumes (MediaType.APPLICATION_JSON)
+    @Produces (MediaType.APPLICATION_JSON)
+    @Path("add")
+    public Course addCourse (Course course) {
+        
+        int courseId = dummyAddCourse(course.getName(), course.getCredits());
+
+        course.setId(courseId);
+
+        return course;
+    }
+
+    private int dummyAddCourse (String courseName, int credits) {
+
+        //To keep the example simple, we will just print
+        //parameters we received in this mehtod to console and not 
+        //actually save data to database.
+        System.out.println("Adding course " + courseName + ", credits = " + credits);
+
+        //TODO: Add course to database table
+
+        //return hard-code id
+        return 10;
     }
 }
