@@ -1,12 +1,17 @@
 package snippets.jee.rest.ws.services;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import snippets.jee.rest.ws.dto.Course;
 import snippets.jee.rest.ws.dto.Teacher;
@@ -60,5 +65,15 @@ public class CourseService {
 
         //return hard-code id
         return 10;
+    }
+
+    @POST
+    @Consumes (MediaType.APPLICATION_FORM_URLENCODED)
+    @Path("add")
+    public Response addCourseFromForm (@FormParam("name") String courseName, @FormParam("credits") int credits) throws URISyntaxException {
+
+        dummyAddCourse(courseName, credits);
+
+        return Response.seeOther(new URI("../addCourseSuccess.html")).build();
     }
 }
