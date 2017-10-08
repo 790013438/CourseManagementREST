@@ -23,25 +23,25 @@
                 //Set callback function, because we will have XMLHttpRequest 
                 //make asynchronous call to our web service
                 req.onreadystatechange = function() {
-                    if (req.readyState == 4 && req.statues == 200) {
+                    if (req.readyState == 4 && req.status == 200) {
                         //HTTP call was successful. Display response
                         document.getElementById("responseSpan").innerHTML = req.responseText;
                     }
                 }
-            };
 
-            //Open request to our REST service. Call is going to be asyc
-            req.open("POSt", "http://localhost:8080/CourseManagementREST/services/course/add", true);
-            //Set request content type as JSON
-            req.setRequestHeader("Content-type", "application/JSON");
+                //Open request to our REST service. Call is going to be asyc
+                req.open("POSt", "http://localhost:8080/CourseManagementREST/services/course/add", true);
+                //Set request content type as JSON
+                req.setRequestHeader("Content-type", "application/JSON");
 
-            //Create Course object and then stringify it to create JSON string
-            var course = {
-                "course_name": courseName,
-                "credits": credits
-            };
-            //Send request.
-            req.send(JSON.stringify(course));
+                //Create Course object and then stringify it to create JSON string
+                var course = {
+                    "course_name": courseName,
+                    "credits": credits
+                };
+                //Send request.
+                req.send(JSON.stringify(course));
+            }
         </script>
     </body>
 </html>
