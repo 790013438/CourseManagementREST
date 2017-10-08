@@ -52,7 +52,7 @@ public class CourseService {
     private int dummyAddCourse (String courseName, int credits) {
 
         //To keep the example simple, we will just print
-        //parameters we received in this mehtod to console and not 
+        //parameters we received in this method to console and not 
         //actually save data to database.
         System.out.println("Adding course " + courseName + ", credits = " + credits);
 
