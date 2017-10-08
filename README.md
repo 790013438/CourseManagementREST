@@ -34,3 +34,5 @@ public class CourseService {
 > The addCourse method produces and consumes JSON data. It is invoked when the resource path (web service endpoint URL) has the following relative path: "/ course/add". Recall that the CourseService class is annotated with the following path: "/course". So, the relative path for the addCourse method becomes the path specified at the class level and at the method level (which in this case is "add").  We are returning a new instance of Course from addCourse. Jersey creates an appropriate JSON representation of this class on the basis of the JAXB annotation that we have added to the Course class. We have already added a dependency in the project on the Jersey module that handles the JSON format (in pom.xml, we added a dependency on jersey-media-json-jackson).
 
 ### Invoking the POST REST web service from JavaScript
+### Creating the REST web service with Form POST
+其间有400错误，但是后来没改就好了，没有找到原因
